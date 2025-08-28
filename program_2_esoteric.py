@@ -1,5 +1,5 @@
 #EsoPrint A unnecicarly stupid way to print the paragaph for fun 
-#Scuyul 8-27-2025
+#Griffin Corniea 8-27-2025
 
 import threading
 import time
