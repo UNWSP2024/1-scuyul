@@ -17,3 +17,17 @@ hello_world()
 # He will stand before kings;
 # he will not stand before obscure men.”
 #     (Proverbs 22:29) 
+
+
+
+
+
+# below is a more esoteric way to print it lol
+
+Array = ['“Do you see a man skillful in his work? ',
+             'He will stand before kings;',
+    'he will not stand before obscure men.”',
+    '    (Proverbs 22:29)']
+
+for items in Array:
+    print(items)
