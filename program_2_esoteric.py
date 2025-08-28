@@ -1,25 +1,20 @@
-#Method One
-Array = ['D', 'o', ' ', 'y', 'o', 'u', ' ', 's', 'e', 'e', ' ', 'a', ' ', 'm', 'a', 'n', ' ', 's', 'k', 'i', 'l', 'l', 'f', 'u', 'l', ' ', 'i', 'n', ' ', 'h', 'i', 's', ' ', 'w', 'o', 'r', 'k', '?', '\n', 'H', 'e', ' ', 'w', 'i', 'l', 'l', ' ', 's', 't', 'a', 'n', 'd', ' ', 'b', 'e', 'f', 'o', 'r', 'e', ' ', 'k', 'i', 'n', 'g', 's', ';', '\n', 'h', 'e', ' ', 'w', 'i', 'l', 'l', ' ', 'n', 'o', 't', ' ', 's', 't', 'a', 'n', 'd', ' ', 'b', 'e', 'f', 'o', 'r', 'e', ' ', 'o', 'b', 's', 'c', 'u', 'r', 'e', ' ', 'm', 'e', 'n', '.”', '\n', ' ', ' ', ' ', ' ', ' ', '(', 'P', 'r', 'o', 'v', 'e', 'r', 'b', 's', ' ', '2', '2', ':', '2', '9', ')']
+#EsoPrint A unnecicarly stupid way to print the paragaph for fun 
+#Scuyul 8-27-2025
 
-for items in Array:
-    print( items, end="")
+import threading
+import time
 
-
-
-
+charArray = ['D', 'o', ' ', 'y', 'o', 'u', ' ', 's', 'e', 'e', ' ', 'a', ' ', 'm', 'a', 'n', ' ', 's', 'k', 'i', 'l', 'l', 'f', 'u', 'l', ' ', 'i', 'n', ' ', 'h', 'i', 's', ' ', 'w', 'o', 'r', 'k', '?', '\n', 'H', 'e', ' ', 'w', 'i', 'l', 'l', ' ', 's', 't', 'a', 'n', 'd', ' ', 'b', 'e', 'f', 'o', 'r', 'e', ' ', 'k', 'i', 'n', 'g', 's', ';', '\n', 'h', 'e', ' ', 'w', 'i', 'l', 'l', ' ', 'n', 'o', 't', ' ', 's', 't', 'a', 'n', 'd', ' ', 'b', 'e', 'f', 'o', 'r', 'e', ' ', 'o', 'b', 's', 'c', 'u', 'r', 'e', ' ', 'm', 'e', 'n', '.”', '\n', ' ', ' ', ' ', ' ', ' ', '(', 'P', 'r', 'o', 'v', 'e', 'r', 'b', 's', ' ', '2', '2', ':', '2', '9', ')']
 
 
-#Method Two
-text = """Do you see a man skillful in his work? 
+def delayedPrint(ch, delay_ms):
+    time.sleep((delay_ms + 1 ) / 100)
+    print(ch, end="", flush=True)
 
-He will stand before kings;
-
-he will not stand before obscure men.”
-
-     (Proverbs 22:29)"""
+threads = []
 
 
-chars = list(text)
+for i, ch in enumerate(charArray):
+    threder = threading.Thread(target=delayedPrint, args=(ch, i))
+    threder.start()
 
-for items in chars:
-    print( items, end="")
